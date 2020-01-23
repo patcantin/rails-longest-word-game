@@ -13,14 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ body{
+
+ }
 
  .mixed{
-  display: flex;
-  padding: 20px;
-  border: 1px solid black;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+ }
+
+ .mixed .item{
+    width: 60px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    background-color: #5F9EA0;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+      box-shadow: 5px 5px #888888;;
  }
 
  .container{
-  margin: 0 auto;
-  text-align: center;
+    margin: 0 auto;
  }
+
+ form{
+  margin: 0 auto;
+  width: 50%;
+ }
+
+
