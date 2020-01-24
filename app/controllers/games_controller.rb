@@ -20,6 +20,7 @@ class GamesController < ApplicationController
     user_serialized = open(url).read
     user = JSON.parse(user_serialized)
 
+    old = params[:letter_list]
     arr = params[:answer].split(//)
     word = params[:answer]
     arr.each do |x|
@@ -32,7 +33,7 @@ class GamesController < ApplicationController
             @alert = 'Sorry but ' + word.upcase + ' does not seem to be a valid english word.'
           end
       else
-        @alert = "Sorry but " + word.upcase + " can't be build of " + @arr
+        @alert = "Sorry but " + word.upcase + " can't be build of : " + old.upcase
       end
       @lett = "Letters left : #{@arr.join(",")}"
     end
