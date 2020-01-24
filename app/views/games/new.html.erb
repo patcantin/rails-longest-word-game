@@ -1,5 +1,5 @@
 <div class="container">
-<h1>New game</h1>
+<h1 class="center">New game</h1>
 
 <div class="mixed">
   <% @letters.each do |item| %>
@@ -9,11 +9,14 @@
   <%end%>
 </div>
 
-<form class="form" action="/score" method="post">
+<form class="form-inline justify-content-center" action="/score" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letter_list, @letters %>
   <div class="form-group">
     <input type="text" class="form-control" name="answer" placeholder="Type your answer">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Play</button>
+  <div class="form-group">
+  <button type="submit" class="btn btn-info">Play</button>
+  </div>
 </form>
 </div>
